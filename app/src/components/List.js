@@ -5,11 +5,12 @@ import axios from 'axios'
 
 import{fetchSuccess} from './../action'
 const List = (props) =>{
+    const {anime, dispatch} = props
     useEffect(() =>{
         axios
         .get("https://api.jikan.moe/v3/search/anime?q=naruto")
         .then(res => {
-            props.dispatch(fetchSuccess(res.data.results))
+            dispatch(fetchSuccess(res.data.results))
         })
         .catch(err=>{
             console.log(err)
@@ -20,8 +21,8 @@ const List = (props) =>{
     return(
         <div>
             {
-            props.anime.map(item =>{
-             return <Anime /> 
+            anime.map((item,index) =>{
+             return <Anime anime={item}  /> 
             })
             }
         </div>

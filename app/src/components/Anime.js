@@ -8,7 +8,7 @@ const Anime = (props) =>{
 
     return(
       <div>
-          {console.log(props)}
+          {console.log(anime)}
             <h2>{anime.title}</h2>
             <img alt={anime.title} src ={anime.image_url} />
             <p>Episodes: {anime.episodes}</p>
@@ -19,10 +19,5 @@ const Anime = (props) =>{
         </div>
     )
 }
-const mapStateToProps = (state) =>{
-    return{
-      anime: state.anime
-    }
-  
-  }
-export default connect(mapStateToProps) (Anime);
+
+export default  Anime;
