@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
 
 
 
@@ -8,7 +7,7 @@ const Anime = (props) =>{
 
     return(
       <div>
-          {console.log(anime)}
+
             <h2>{anime.title}</h2>
             <img alt={anime.title} src ={anime.image_url} />
             <p>Episodes: {anime.episodes}</p>

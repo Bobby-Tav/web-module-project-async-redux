@@ -10,7 +10,7 @@ function App() {
 
   
   return (
-    <div>
+    <div className='App'>
       <div>
         <h1>Anime</h1>
       </div>

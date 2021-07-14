@@ -5,19 +5,19 @@ import axios from 'axios'
 
 import{fetchSuccess} from './../action'
 const List = (props) =>{
-    const {anime, dispatch} = props
+    const {anime, fetchSuccess} = props
     useEffect(() =>{
         axios
         .get("https://api.jikan.moe/v3/search/anime?q=naruto")
         .then(res => {
-            dispatch(fetchSuccess(res.data.results))
+            fetchSuccess(res.data.results)
         })
         .catch(err=>{
             console.log(err)
         })
     },[])
 
-    console.log(props)
+
     return(
         <div>
             {
@@ -35,4 +35,4 @@ const mapStateToProps = state =>{
     } 
 }
 
-export default connect(mapStateToProps)(List);
+export default connect(mapStateToProps,{fetchSuccess})(List);
